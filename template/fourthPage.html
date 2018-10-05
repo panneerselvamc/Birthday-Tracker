@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Insert title here</title>
+<style>
+header {
+	text-align: left;
+	font-size: 20px;
+	font-colour: black;
+}
+nav {
+	float: left;
+	width: 12%;
+	height: 800px; /* only for demonstration, should be removed */
+	padding: 20px;
+	background: skyblue;
+}
+
+body {
+	background: url("birthday1.jpg");
+	font-size: 150%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color:rgba(0,0,250,0.8);
+	background-blend-mode:lighten;
+}
+</style>
+</head>
+<body>
+  {% csrf_token %}
+	<header id="name"
+		style="margin-left: 15px; height: 50px; font-size: 150%;"></header>
+	<nav>
+		<input type="button"
+			style="margin-top: 5px; width: 100%; background: skyblue; height: 35px; font-size: 70%;"
+			value="HOME" onclick="reloadPage()">
+		<input type="button"
+			style="margin-top: 5px; width: 100%; background: lightblue; height: 35px; font-size: 70%;"
+			value="MESSAGES" onclick="thirdPage()">
+		<input type="button"
+			style="margin-top: 5px; width: 100%; background: lightblue; height: 35px; font-size: 70%;"
+			value="UPDATE PROFILE" onclick="fifthPage()">
+		<input
+			type="button"
+			style="margin-top: 5px; width: 100%; background: lightblue; height: 35px; font-size: 70%;"
+			value="LOG OUT" onclick="firstPage()">
+	</nav>
+    <p style="margin-left: 680px;height: 35px; font-size: 120%;">HOME PAGE
+	</p>
+	<p>
+      {% csrf_token %}
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="click here to see todays birthday"
+			style="margin-left: 350px; HEIGHT: 35PX; background: lightblue; font-size: 80%;"
+			onclick="generate_table()">
+	</p>
+</body>
+{% load static %}
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{% static 'fourthPageJs.js' %}"></script>
+</html>

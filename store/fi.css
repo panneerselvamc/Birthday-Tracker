@@ -1,0 +1,8 @@
+body {
+    text-align:center;
+	background: url("cloud.jpg");
+	font-size: 150%;
+	background-repeat: no-repeat;
+	background-size: 100% 130%;
+	background-attachment:fixed;
+}

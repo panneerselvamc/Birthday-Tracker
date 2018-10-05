@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static from staticfiles%}
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet" href="{% static 'fi.css' %}">
+{% load static %}
+</head>
+<body>
+<center><h1 style="background:blue;font-family:verdana;">BIRTHDAY TRACKER</h1></center>
+<p style="font-size:150%;"><i>"Roses are red,voilet is blue...<br>Tell us your birthday,so that we can wish you..."</i></p>
+<form method="POST">
+  {% csrf_token %}
+<table>
+<tr>
+<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName</td>
+<td>:</td>
+<td><input type="text" id="name" name="NAME" onfocusout="nameFunction()" required>
+  <div id="nameError"><input style="width:200px;background:deepskyblue;border:1px solid black;" type="text" value="**Please enter your name**">
+</div></td>
+</tr>
+<tr>
+<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPassword</td>
+<td>:</td>
+<td><input type="password" id="password" name="PASSWORD" onfocusout="password1Function()" required>
+<div id="password1Error"><input style="background-color:deepskyblue;width:200px;border:1px solid black;" type="text" value="**Please enter your password**"></div>
+</td>
+</tr>
+</table>
+<input type="button" value="SUBMIT"  style="font-size:80%;" onclick="myfunction()">
+</form>
+</p>
+<p style="font-color:red;">Not registered yet???
+<a href="http://localhost:8000/second">SIGN UP HERE</a>
+</p>
+</body>
+<script src="{% static 'homeJs.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</html>

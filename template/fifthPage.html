@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>new user</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'ci.css' %}">
+</head>
+<body>
+	<header id="user"
+		style="margin-left: 15px; height: 50px; font-size: 150%;"></header>
+<h2><center>Create or Update Profile</center></h2>
+<form method="POST">
+{% csrf_token %}
+<table align="center">
+<tr>
+<td>Full Name</td>
+<td>:</td>
+<td><input type="text" id="name" readonly>
+</td>
+</tr>
+<tr>
+<td>D.O.B</td>
+<td>:</td>
+<td><input type="text" id="dateOfBirth" readonly></td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>:</td>
+<td><input type="text"id="mobile" readonly>
+</td>
+</tr><tr>
+<td>Favourite cakes</td>
+<td>:</td>
+<td><select multiple id="cake" size="3">
+<option value="chocolateCake">Chocolate cake</option>
+<option value="blackForest">Blackforest</option>
+<option value="whiteForest">Whiteforest</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Favourite colour</td>
+<td>:</td>
+<td><select id="colours" required>
+<option value="violet">Violet</option>
+<option value="indigo">Indigo</option>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="yellow">Yellow</option>
+<option value="orange">Orange</option>
+<option value="red">Red</option>
+</select>
+</tr>
+<tr>
+<td>About yourself</td>
+<td>:</td>
+<td><textarea id="message" rows="5" cols="30" placeholder="Share something about yourself..." required></textarea></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>:</td>
+<td><input size="29" type="password" id="password" pattern=".{4,}" title="Password must have atleat 4 characters"
+					placeholder="enter the password" onfocusout="password1Function()">
+<div id="password1Error"><input style="width:200px;background:deepskyblue;border:1px solid black;" type="text" value="**Please enter the password**"></div>
+</td>
+</tr>
+<tr>
+<td>Confirm Password</td>
+<td>:</td>
+<td><input type="password" id="confirmPassword" placeholder="Re-enter the password" onfocusout="password2Function()">
+<div id="password2Error"><input style="width:200px;background:deepskyblue;border:1px solid black;" type="text" value="**Please enter the password**"></div>
+</td>
+</tr>
+</table>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="SAVE" style="font-size:60%;" onclick="myfunction()">
+<a href="http://localhost:8000/home"><input type="button" value="LOGOUT" style="font-size:60%;"></a>
+</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="{% static 'fifthJs.js' %}"></script>
+</html>

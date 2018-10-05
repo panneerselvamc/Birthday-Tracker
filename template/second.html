@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>new user</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'ci.css' %}">
+</head>
+<body>
+<h2><center>Create or Update Profile</center></h2>
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table align="center">
+<tr>
+<td>Full Name</td>
+<td>:</td>
+<td><input type="text" id="name" placeholder="Enter the name" onfocusout="namefunction()"  required>
+<div id="nameError"><input style="width:200px;background:deepskyblue;border:1px solid black;" type="text" value="**Please enter your name**"></div></
+</td>
+</tr>
+<tr>
+<td>D.O.B</td>
+<td>:</td>
+<td><input type="date" id="dateOfBirth" placeholder="Enter the d.o.b" required></td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>:</td>
+<td><input size="29" type="tel" pattern="[0-9]{10}" title="Please enter 10 digit mobile number" id="mobile"
+					placeholder="Enter mobile number" onfocusout="mobilefunction()">
+          <div id="mobileError"><input style="width:230px;background:deepskyblue;border:1px solid black;" type="text" value="**Please enter 10 digit mobile number**"></div>
+</td>
+</tr><tr>
+<td>Favourite cakes</td>
+<td>:</td>
+<td><select multiple id="cake" size="3">
+<option value="chocolateCake">Chocolate cake</option>
+<option value="blackForest">Blackforest</option>
+<option value="whiteForest">Whiteforest</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Favourite colour</td>
+<td>:</td>
+<td><select id="colours" required>
+<option value="violet">Violet</option>
+<option value="indigo">Indigo</option>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="yellow">Yellow</option>
+<option value="orange">Orange</option>
+<option value="red">Red</option>
+</select>
+</tr>
+<tr>
+<td>About yourself</td>
+<td>:</td>
+<td><textarea id="message" rows="5" cols="30" placeholder="Share something about yourself..." required></textarea></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>:</td>
+<td><input size="29" type="password" id="password" pattern=".{4,}" title="Password must have atleat 4 characters"
+					placeholder="enter the password" onfocusout="password1Function()">
+<div id="password1Error"><input style="width:200px;background:deepskyblue;border:1px solid black;" type="text" value="**Please enter the password**"></div>
+</td>
+</tr>
+<tr>
+<td>Confirm Password</td>
+<td>:</td>
+<td><input type="password" id="confirmPassword" placeholder="Re-enter the password" required></td>
+</tr>
+<tr>
+	<td>ProfilePicture</td>
+	<td>:</td>
+	<td><input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"></label>
+	</td>
+</tr>
+</table>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="SAVE" style="font-size:60%;" onclick="myfunction()">
+<input type="reset" style="font-size:60%;" value="CANCEL">
+</form>
+</body>
+  <script src="{% static 'secondJs.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</html>
